@@ -205,7 +205,7 @@ public final class IgniteStopwatch {
     public IgniteStopwatch stop() {
         long tick = ticker.read();
 
-        assert !isRunning : "This stopwatch is already running.";
+        assert isRunning : "This stopwatch is already stopped.";
 
         isRunning = false;
         elapsedNanos += tick - startTick;
